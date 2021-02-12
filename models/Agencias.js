@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const shortid = require("shortid");
 const slug = require("slug");
 
-const restauranteSchema = new mongoose.Schema({
+const agenciaSchema = new mongoose.Schema({
     nombre: String,
     descripcion: String,
     direccion: String,
@@ -30,7 +30,7 @@ const restauranteSchema = new mongoose.Schema({
         precio: Number,
         agencia_id: { 
             type: mongoose.Schema.ObjectId,
-            ref: "Agencia",
+            ref: "Agencias",
             required: true,
          },
         estado: String,
@@ -105,6 +105,6 @@ const restauranteSchema = new mongoose.Schema({
   });
 
   // Generar un índice para mejorar la búsqueda por el nombre del producto
-  agenciaSchema.index({ nombre: "text" });
+    agenciaSchema.index({ nombre: "text" });
 
 module.exports = mongoose.model("Agencias", agenciaSchema);

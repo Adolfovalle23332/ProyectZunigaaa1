@@ -2,7 +2,7 @@
 const express = require("express");
 const agenciaController = require("../../controllers/AgenciaController");
 const mongoose = require("mongoose");
-const Agencia = mongoose.model("Agencia");
+const Agencia = mongoose.model("Agencias");
 
 const { json } = require("express");
 const passport = require("passport");

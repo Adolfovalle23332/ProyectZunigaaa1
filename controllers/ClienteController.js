@@ -2,7 +2,7 @@
 // Importar los módulos requeridos
 const mongoose = require("mongoose");
 const Usuario = mongoose.model("Usuarios");
-const Agencia = mongoose.model("Agencia");
+const Agencia = mongoose.model("Agencias");
 const Carrito = mongoose.model("Cliente");
 const { validationResult } = require("express-validator");
 const multer = require("multer");
