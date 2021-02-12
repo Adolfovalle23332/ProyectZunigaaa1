@@ -1,0 +1,32 @@
+<button type="button" class="list-group-item active waves-effec" data-toggle="modal" data-target="#centralModalNuevo">Nuevo
+</button>
+{{> showMessages messages}}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Imagen</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each agencias as |agencia|}}
+    <tr>
+      <td>{{ agencia.nombre }}</td>
+      <td><a href="">{{ agencia.descripcion }}</a></td>
+      <td><img src="/uploads/items/{{agencia.imagen_url}}" alt="imagen de la agencia" width="200"></td>
+      <td>
+        <a  href="{{agencia.url}}" class="btn btn-info">Editar</a>
+        <a  href="{{agencia.url}}/items" class="btn btn-secondary">Platillos</a>
+        <form action="{{agencia._id}}/eliminarAgencia" method="post" class="btn-Eliminar">
+        <button type="submit" class="btn btn-danger" >Eliminar</button>
+        </form>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+{{> modalAgencias }}
+

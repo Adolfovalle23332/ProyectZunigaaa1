@@ -1,0 +1,58 @@
+<!-- Central Modal Large Info-->
+<div class="modal fade" id="pagarModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-notify modal-info" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+
+                <!-- Material form contact -->
+                <div class="card">
+
+                    <!--Card content-->
+                    <div class="card-body px-lg-5 pt-0">
+                        <h1>Crear Tramite</h1>
+
+                        <!-- Default form pagar -->
+                        <form class="text-center border border-light p-5" action="/clientes/crear-orden" method="post">
+
+                            <p class="h4 mb-4">Confirmar para crear Tramite</p>
+
+                            <select class="browser-default custom-select">
+                                <option selected>Opciones disponibles</option>
+                                <option value="1">Pagar al recibir</option>
+                            </select>
+
+                            <!-- Pagar in button -->
+                            <button class="btn btn-info btn-block my-4" type="submit">Pagar</button>
+
+                        </form>
+                        <!-- Default form pagar -->
+
+                    </div>
+
+                </div>
+                <!-- Material form contact -->
+            </div>
+
+            <!--Footer-->
+            {{!-- <div class="modal-footer">
+                <a role="button" class="btn btn-info">Get it now
+                    <i class="far fa-gem ml-1"></i>
+                </a>
+                <a role="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">No,
+                    thanks</a>
+            </div> --}}
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!-- Central Modal Large Info-->

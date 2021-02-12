@@ -1,0 +1,91 @@
+
+  <!-- Central Modal Large Info-->
+<div class="modal fade" id="centralModalNuevo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-notify modal-info" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading lead">Nuevo Item {{ valor }}</p>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+
+        <!-- Material form contact -->
+        <div class="card">
+
+          <!--Card content-->
+          <div class="card-body px-lg-5 pt-0">
+            <h1>Agencia: {{agencia.nombre}}</h1>
+            <!-- Form -->
+            <form action="items/nuevo/item" method="POST" class="text-center"
+              style="color: #757575;" enctype="multipart/form-data">
+              <input type="hidden" name="restaurante_id" value="{{restaurante._id}}">
+              <div class="form-row mb-4">
+
+                <div class="col">
+                  <div class="md-form mt-3">
+                    <input type="text" id="materialContactFormNombre" name="nombre" class="form-control">
+                    <label for="materialContactFormName">Nombre</label>
+                  </div>
+
+                </div>
+                <div class="col">
+                  <div class="md-form mt-3">
+                    <input type="text" id="materialContactFormDescripcion" name="descripcion" class="form-control">
+                    <label for="materialContactFormName">Descripción</label>
+                  </div>
+                </div>
+
+              </div>
+
+             
+                <div class="col">
+                 
+                </div>
+              </div>
+              <!-- Nombre -->
+              
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupFileAddon01">Subir</span>
+                </div>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="inputGroupFile01" name="imagen_url"
+                    aria-describedby="inputGroupFileAddon01">
+                  <label class="custom-file-label" for="inputGroupFile01">Buscar archivo</label>
+                </div>
+              </div>
+
+              <!-- Send button -->
+              <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect"
+                type="submit">Guardar</button>
+
+            </form>
+            <!-- Form -->
+
+          </div>
+
+        </div>
+        <!-- Material form contact -->
+      </div>
+
+      <!--Footer-->
+      {{!-- <div class="modal-footer">
+        <a role="button" class="btn btn-info">Get it now
+          <i class="far fa-gem ml-1"></i>
+        </a>
+        <a role="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">No,
+          thanks</a>
+      </div> --}}
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!-- Central Modal Large Info-->

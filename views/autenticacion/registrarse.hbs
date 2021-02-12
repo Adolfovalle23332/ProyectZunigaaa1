@@ -1,0 +1,62 @@
+
+  <div class="row">
+    <div class="col align-self-center">
+      <div class="page-header" style="background-image: url('https://source.unsplash.com/ueZXMrZFFKQ/2400x1596');">
+    <div class="filter"></div>
+    <div class="container">
+      {{!-- Mensajes para el usuario --}}
+      {{> showMessages messages}}
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-7 col-12 ml-auto">
+          <div class="info info-horizontal">
+            <div class="icon">
+              <i class="fas fa-user-plus"></i>
+            </div>
+            <div class="description">
+              <h3> Es gratis </h3>
+              <p>Regístrate de manera gratuita a nuestra plataforma.</p>
+            </div>
+          </div>
+          <div class="info info-horizontal">
+            <div class="icon">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            
+          </div>
+          <div class="info info-horizontal">
+            <div class="icon">
+              <i class="fa fa-map-signs"></i>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-5 col-12 mr-auto">
+          <div class="card card-register">
+            <h3 class="card-title text-center">Regístrate</h3>
+            <div class="social">
+              <button href="#paper-kit" class="btn btn-just-icon btn-facebook"><i class="fa fa-facebook"></i></button>
+              <button href="#paper-kit" class="btn btn-just-icon btn-google"><i class="fa fa-google"></i></button>
+              <button href="#paper-kit" class="btn btn-just-icon btn-twitter"><i class="fa fa-twitter"></i></button>
+            </div>
+            <div class="division">
+              <div class="line l"></div>
+              <span>o</span>
+              <div class="line r"></div>
+            </div>
+            {{!-- Formulario de registro --}}
+            <form class="register-form" method="POST" action="/crear-cuenta">
+              <input type="text" class="form-control" placeholder="Nombre completo" name="nombre" required>
+              <input type="text" class="form-control" placeholder="Correo electrónico" name="email" required>
+              <input type="password" class="form-control" placeholder="Contraseña" name="password" required>
+              <button class="btn btn-block btn-round">Registrarse</button>
+            </form>
+            <div class="login">
+              <p>¿Ya tienes una cuenta? <a href="/iniciar-sesion">Inicia sesión</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+  </div>

@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="page-header" style="background-image: url('https://source.unsplash.com/ueZXMrZFFKQ/2400x1596');">
+    <div class="filter"></div>
+    <div class="container">
+                    {{!-- Mensajes para el usuario --}}
+      {{> showMessages messages}}
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-6 ml-auto mr-auto">
+          <div class="card card-register">
+            <h3 class="card-title" style="font-weight: bold;">Bienvenidos
+
+            </h3>
+            {{!-- Formulario de registro --}}
+            <form class="register-form" method="POST" action="/iniciar-sesion">
+              <label for="email">Correo electrónico</label>
+              <input type="text" class="form-control" placeholder="user@correo.com" name="email" required>
+              <label for="password">Contraseña</label>
+              <input type="password" class="form-control" placeholder="*******" name="password" required>
+              <button class="btn btn-block btn-round">Iniciar sesión</button>
+            </form>
+            <div class="forgot">
+              <a href="/olvide-password" class="btn btn-link btn-danger">¿Olvidaste tu contraseña?</a>
+            </div>
+            <div class="login">
+              <p>¿No tienes una cuenta? <a href="/crear-cuenta"><strong>¡Regístrate!</strong></a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+</div>

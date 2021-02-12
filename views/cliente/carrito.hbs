@@ -1,0 +1,54 @@
+<div class="row principal">
+    <div class="col-lg-3 col-xs-12"></div>
+    <div class="col-lg-6 col-xs-12">
+        <!--Section: Content-->
+        <section class="dark-grey-text text-center">
+            <!-- Grid row -->
+            
+            <div class="row">
+                {{> showMessages messages}}
+                {{#if mostrarDatos}}
+                    <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">item</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each mostrarDatos as |item|}}
+                        <tr>
+                            <td>{{ item.item }}</td>
+                            <td><img src="/uploads/items/{{item.imagen}}" alt="imagen del item"
+                                    width="200" height="150"></td>
+                            <td><a href="">{{ item.cantidad }}</a></td>
+                            <td><a href="">{{ item.precio }}</a></td>
+                            <td><a href="">{{ item.total }}</a></td>
+                            <td>
+                                <a href="agregaruno/{{item._id}}" class="btn btn-info"><i class="fas fa-plus"></i></a>
+                                <form action="quitaruno/{{item._id}}" method="POST"
+                                    class="btn-Eliminar" >
+                                    <button type="submit" class="btn btn-danger"><i class="fas fa-minus"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+                <a data-toggle="modal" data-target="#pagarModal" class="btn btn-info">Crear Orden</a>
+                {{ else }}
+                    <h1>No tienes nada en el carrito <a href="/inicio">Compra Ahora!!</a></h1>
+                {{/if }}
+                
+            </div>
+            <!-- Grid row -->
+
+        </section>
+        <!--Section: Content-->
+    </div>
+    <div class="col-lg-3 col-xs-12"></div>
+</div>
+{{> pagar }}

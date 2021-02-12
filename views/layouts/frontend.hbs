@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="/css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="/css/style.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Engagement&display=swap" rel="stylesheet">
+  <title>{{title}}</title>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+    <div class="container">
+
+      <!-- Brand -->
+      <a class="navbar-brand waves-effect" href="/inicio">
+        <img src="/img/logo.png" alt="Logo" width="100">
+      </a>
+
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item {{# ifCond pagActual "Inicio"}}active{{/ifCond}}">
+            <a class="nav-link waves-effect" href="/inicio">Inicio
+            </a>
+          </li>
+          {{# EachRol tipo "delivery" }}
+          <li class="nav-item {{# ifCond pagActual "Admninistracion"}}active{{/ifCond}}">
+            <a class="nav-link waves-effect" href="#">Panel Administracion</a>
+          </li>
+          {{/EachRol }}
+          {{# EachRol tipo "restaurante" }}
+          <li class="nav-item {{# ifCond pagActual "Admninistracion"}}active{{/ifCond}}">
+            <a class="nav-link waves-effect" href="#">Panel Administracion</a>
+            {{# ifCond pagActual "Admin" }}
+            <span class="sr-only">(current)</span>
+            {{/ifCond }}
+          </li>
+          {{/EachRol }}
+        </ul>
+
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+            <a href="/clientes/carrito" class="nav-link waves-effect">
+              <span class="badge red z-depth-1 mr-1"> {{ cantidad }} </span>
+              <i class="fas fa-shopping-cart"></i>
+              <span class="clearfix d-none d-sm-inline-block"> Carrito </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://twitter.com/MDBootstrap" class="nav-link waves-effect" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          {{# if login }}
+          <li class="nav-item">
+            <a href="/cerrar-sesion" class="nav-link border border-light rounded">
+              <i class="fas fa-sign-out mr-2"></i>Cerrar sesión
+            </a>
+          </li>
+          {{ else }}
+          <li class="nav-item">
+            <a href="" class="nav-link border border-light rounded" data-toggle="modal" data-target="#modalLoginForm">
+              <i class="fa fa-user mr-2"></i>Iniciar sesión
+            </a>
+          </li>
+          {{/if}}
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  <!-- Navbar -->
+  <div class="container-fluid">
+    {{{ body   }}}
+  </div>
+
+{{> modalLogin  }}
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="/js/mdb.min.js"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+  </script>
+</body>
+
+<footer>
+
+</footer>
+
+</html>

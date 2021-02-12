@@ -1,0 +1,124 @@
+/* Required height of parents of the Half Page Carousel for proper displaying carousel itself */
+html,
+body,
+header,
+.view {
+  height: 100%; }
+
+@media (max-width: 740px) {
+  .full-page-intro {
+    height: 1000px; } }
+
+/* Half Page Carousel itself*/
+.carousel {
+  height: 50%; }
+  .carousel .carousel-inner {
+    height: 100%; }
+    .carousel .carousel-inner .carousel-item,
+    .carousel .carousel-inner .active {
+      height: 100%; }
+
+/* Adjustment for mobile devices*/
+@media (max-width: 776px) {
+  .carousel {
+    height: 100%; } }
+
+/* Navbar animation */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.3); }
+
+.top-nav-collapse {
+  background-color: #1C2331; }
+
+/* Adding color to the Navbar on mobile */
+@media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: #1C2331; } }
+
+/* Footer color for sake of consistency with Navbar */
+.page-footer {
+  background-color: #0f47b8; }
+
+@media (max-width: 740px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 1000px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 650px;
+  }
+}
+
+.display-1{
+  font-size: 5rem!important ;
+}
+@media (max-width: 650px){
+  .display-1{
+    font-size: 3rem!important;
+  }
+}
+
+@media (max-width: 280px){
+  .display-1{
+    font-size: 2.5rem!important;
+  }
+}
+
+@media (max-width: 1167px){
+  .wow{
+    background-color: #ffffffeb;
+    border-radius: 30px;
+    box-shadow: 18px 18px 20px #D1D9E6, -18px -18px 20px #FFFFFF;
+  }
+}
+
+
+@media (min-width: 800px) and (max-width: 850px) {
+          .navbar:not(.top-nav-collapse) {
+              background: #1C2331!important;
+          }
+      }
+
+.fondo{
+  background-image: url('/img/svg/landing.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+
+.logo{
+  font-size: 2.5em;
+  font-family: 'Engagement', cursive;
+}
+.principal{
+  position: relative;
+  top: 13em;
+}
+
+.principal-items{
+  position: relative;
+  top: 5em;
+}
+
+.titulo-landingpage{
+  color: #000!important;
+}
+
+@media (max-width: 740px){
+  .view {
+   height: auto;
+}
+}
+
+.imagenPlatillo{
+  width: 100%;
+  height: 100%;
+}

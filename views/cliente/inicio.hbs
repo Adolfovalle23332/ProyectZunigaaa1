@@ -1,0 +1,49 @@
+
+    <div class="row principal">
+        <div class="col-lg-12 col-xs-12">
+                <!--Section: Content-->
+                <section class="dark-grey-text text-center">
+                    <!-- Grid row -->
+                    <div class="row">
+
+                       {{#each  agencias as |agencia|}}
+                         <!-- Grid column -->
+                        <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
+                            <!-- Card -->
+                            <div class="card align-items-center">
+                                <!-- Card image -->
+                                <div class="view overlay">
+                                    <img src="/uploads/items/{{agencia.imagen_url}}"
+                                        class="card-img-top" alt="">
+                                    <a href="{{agencia.url}}">
+                                        <div class="mask rgba-white-slight"></div>
+                                    </a>
+                                </div>
+                                <!-- Card image -->
+                                <!-- Card content -->
+                                <div class="card-body text-center">
+                                    <!-- Category & Title -->
+                                    <a href="{{agencia.url}}" class="grey-text">
+                                        <h6>{{ agencia.nombre }}</h6>
+                                    </a>
+                                    <h5 class="mb-3">
+                                        <strong>
+                                            <a href="{{agencia.url}}" class="dark-grey-text">{{ agencia.descripcion }} <br>
+                                            </a>
+                                        </strong>
+                                    </h5>
+                                </div>
+                                <!-- Card content -->
+                            </div>
+                            <!-- Card -->
+                        </div>
+                        <!-- Grid column -->
+                       {{/each  }}
+
+                    </div>
+                    <!-- Grid row -->
+
+                </section>
+                <!--Section: Content-->
+        </div>
+    </div>

@@ -1,0 +1,33 @@
+<h1>agencia: {{agencia.nombre}}</h1>
+<button type="button" class="list-group-item active waves-effect" data-toggle="modal" data-target="#centralModalNuevo">Nuevo item
+</button>
+{{> showMessages messages}}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Imagen</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each restaurante.items as |item|}}
+    <tr>
+      <td>{{ item.nombre }}</td>
+      <td><a href="">{{item.descripcion}}</a></td>
+      <td><img src="/uploads/items/{{item.imgurl}}" alt="imagen del item" width="200"></td>
+      <td>
+        <a  href="items/{{ item.url }}" class="btn btn-info">Editar</a>
+        <form action="items/{{item._id}}/eliminarItem" method="POST" class="btn-Eliminar">
+
+        <button type="submit" class="btn btn-danger" >Eliminar</button>
+        </form>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+{{> modalItems }}
+

@@ -1,0 +1,183 @@
+<!-- Material form contact -->
+<div class="card">
+
+    <!--Card content-->
+    <div class="card-body px-lg-5 pt-0">
+        <!-- Form -->
+        <form action="/restaurantes/editar" method="POST" class="text-center" style="color: #757575;"
+            enctype="multipart/form-data">
+            <input type="hidden" name="_id" value="{{restaurante._id}}">
+            <div class="form-row mb-4">
+                
+                <div class="col">
+                    <div class="md-form mt-3">
+                        <input type="text" id="materialContactFormNombre" name="nombre" class="form-control"
+                            value="{{restaurante.nombre}}">
+                        <label for="materialContactFormName">Nombre</label>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="md-form mt-3">
+                        <input type="text" id="materialContactFormDescripcion" name="descripcion" class="form-control"
+                            value="{{restaurante.descripcion}}">
+                        <label for="materialContactFormName">Descripción</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-row mb-4">
+                <div class="col">
+                    <!-- Nombre -->
+                    <div class="md-form mt-3">
+                        <input type="text" id="materialContactFormRating" name="rating" class="form-control"
+                            value="{{restaurante.rating}}" min="0" max="5">
+                        <label for="materialContactFormName">Valoración (1-5)</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <!-- Nombre -->
+                    <div class="md-form mt-3">
+                        <input type="text" id="materialContactFormTiempoAprox" name="aprox_delivery_time"
+                            class="form-control" value="{{restaurante.aprox_delivery_time}}">
+                        <label for="materialContactFormName">Tiempo aproximado de entrega en minutos</label>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Nombre -->
+            <div class="md-form mt-3">
+                <input type="text" id="materialContactFormDireccion" name="direccion" class="form-control"
+                    value="{{restaurante.direccion}}">
+                <label for="materialContactFormName">Direccion</label>
+            </div>
+
+            <div class="form-row mb-4">
+                <div class="col">
+                    <!-- Nombre -->
+                    <div class="md-form mt-3">
+                        <input type="text" id="materialContactFormlatitud" name="latitud" class="form-control"
+                            value="{{restaurante.latitud}}">
+                        <label for="materialContactFormName">Latitud</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <!-- Nombre -->
+                    <div class="md-form mt-3">
+                        <input type="text" id="materialContactFormlongitud" name="longitud" class="form-control"
+                            value="{{restaurante.longitud}}">
+                        <label for="materialContactFormName">Longitud</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row mb-4">
+                <div class="col">
+                    <!-- Nombre -->
+                    <div class="md-form mt-3">
+                        <input type="text" id="materialContactFormcargo_empaque" name="cargo_empaque"
+                            value="{{restaurante.cargo_empaque}}" class="form-control">
+                        <label for="materialContactFormName">Cargo de empaque en Lempiras</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <!-- Nombre -->
+                    <div class="md-form mt-3">
+                        <input type="text" id="materialContactFormdelivery_radio" name="delivery_radio"
+                            value="{{restaurante.delivery_radio}}" class="form-control">
+                        <label for="materialContactFormName">Distancia máxima para repartir en KM</label>
+                    </div>
+                </div>
+            </div>
+            <!-- Nombre -->
+            <div class="md-form mt-3">
+                <select class="browser-default custom-select" name="delivery_type">
+                    <option>Tipo de restaurante</option>
+                    <option value="1" {{# ifCond restaurante.delivery_type 1 }}selected{{/ifCond  }}>Repartir</option>
+                    <option value="2" {{# ifCond restaurante.delivery_type 2 }}selected{{/ifCond  }}>Recoger</option>
+                    <option value="3" {{# ifCond restaurante.delivery_type 3 }}selected{{/ifCond  }}>Ambos</option>
+                </select>
+            </div>
+
+            <div class="form-row mb-4">
+                <div class="col">
+                    <!-- Nombre -->
+                    <div class="md-form mt-3">
+                        <input type="text" id="materialContactFormcosto_repartir" name="costo_repartir"
+                            value="{{restaurante.costo_repartir}}" class="form-control">
+                        <label for="materialContactFormName">Costo para repartir en Lempiras</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <!-- Nombre -->
+                    <div class="md-form mt-3">
+                        <input type="text" id="materialContactprecio_minimo_orden" name="precio_minimo_orden"
+                            value="{{restaurante.precio_minimo_orden}}" class="form-control">
+                        <label for="materialContactFormName">Precio mínimo de orden en Lempiras</label>
+                    </div>
+                </div>
+            </div>
+            <div id="preview">
+                <img src="{{rutaImg}}/{{restaurante.imagen_url}}" alt="" class="imagen-restaurante" id="imgActual">
+                <button type="button" class="btn btn-warning"
+                    onclick="obtenerImagenOriginal('{{rutaImg}}/{{ restaurante.imagen_url }}')">Original</button>
+            </div>
+            <div class="input-group">
+
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupFileAddon01">Subir</span>
+                </div>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01" name="imagen_url"
+                        aria-describedby="inputGroupFileAddon01">
+                    <label class="custom-file-label" for="inputGroupFile01" id="nombreArchivo">Elegir Imagen</label>
+                </div>
+            </div>
+
+            <!-- Send button -->
+            <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect"
+                type="submit">Guardar</button>
+
+        </form>
+        <!-- Form -->
+    </div>
+
+</div>
+<!-- Material form contact -->
+
+<script>
+    function obtenerImagenOriginal(urlImagenActual) {
+        if(document.getElementById('imgNueva')){
+            document.getElementById('imgNueva').remove();
+        let preview = document.getElementById('preview'),
+            image = document.createElement('img');
+
+        image.src = urlImagenActual;
+        image.className = "imagen-restaurante";
+        image.id = "imgActual";
+        preview.append(image);
+        document.getElementById("inputGroupFile01").value = "";
+        document.getElementById("nombreArchivo").innerHTML = "Elegir Imagen";
+        }
+    }
+    document.getElementById("inputGroupFile01").onchange = function (e) {
+        // Creamos el objeto de la clase FileReader
+        let reader = new FileReader();
+
+        // Leemos el archivo subido y se lo pasamos a nuestro fileReader
+        reader.readAsDataURL(e.target.files[0]);
+
+        // Le decimos que cuando este listo ejecute el código interno
+        reader.onload = function () {
+            document.getElementById('imgActual').remove();
+            let preview = document.getElementById('preview'),
+                image = document.createElement('img');
+
+            image.src = reader.result;
+            image.className = "imagen-restaurante";
+            image.id = "imgNueva";
+            preview.append(image);
+        };
+    }
+</script>
